@@ -98,7 +98,7 @@ const Nav: React.FC<NavProps> = ({
 
                 {isDropdownOpen && (
                   <div
-                    className={`text-[16px] bg-white border border-gray-200 shadow-lg rounded-[7xl] p-2 z-10 ${mobile ? 'w-full mt-2' : 'absolute w-[12rem] left-[-1rem] mt-2'}`}
+                    className={`text-[16px] bg-white border border-gray-200 shadow-lg rounded-[7xl] p-2 z-10 ${mobile ? 'w-full border-none shadow-none' : 'absolute w-[12rem] left-[-1rem]'}`}
                     onMouseEnter={!mobile ? () => handleMouseEnter(link.label) : undefined}
                     onMouseLeave={!mobile ? handleMouseLeave : undefined}
                   >
