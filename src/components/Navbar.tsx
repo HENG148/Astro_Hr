@@ -9,7 +9,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className="fixed w-full top-0 bg-white border-2 border-[#cde6ff] rounded-3xl backdrop-blur-sm z-50 py-3 px-4 sm:px-6 shadow-sm">
+    <header className="fixed w-full top-3 bg-white border-2 border-[#cde6ff] rounded-3xl backdrop-blur-sm z-50 py-3 px-4 sm:px-6 shadow-sm">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
 
         {/* Mobile Menu */}

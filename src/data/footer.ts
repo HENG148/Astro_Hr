@@ -74,7 +74,7 @@ export const footerData = {
       },
       {
         icon: 'phone',
-        content: '+885 175 402 60'
+        content: '+855 17 540 260'
       },
       {
         icon: 'email',
