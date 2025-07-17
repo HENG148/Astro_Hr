@@ -7,11 +7,6 @@ import 'swiper/css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { InfoSlide } from "@/data/SlideData";
 
-interface SlideItem {
-  image: string | StaticImageData;
-  alt: string;
-}
-
 interface SliderProps {
   autoplayDelay?: number;
   showPagination?: boolean;
@@ -27,12 +22,12 @@ export const InfoSlider: React.FC<SliderProps> = ({
 
 }) => {
   return (
-    <div className={`w-full max-w-[1150px] mx-auto px-4 ${className}`}>
+    <div className={`w-auto max-w-[1180px] mx-auto  ${className}`}>
       <Swiper 
         modules={[Autoplay, ...(showPagination ? [Pagination] : []), ...(showNavigation ? [Navigation] : [])]}
         slidesPerView={1}
         centeredSlides={true}
-        loop={true}
+        loop={true  }
         autoplay={{
           delay: autoplayDelay,
           disableOnInteraction: false,
@@ -43,7 +38,7 @@ export const InfoSlider: React.FC<SliderProps> = ({
           dynamicBullets: true,
           el: ".info-slider-pagination",
         } : false}
-        navigation={showNavigation}
+        // navigation={showNavigation}
         breakpoints={{
           640: {
           spaceBetween: 20,
@@ -70,7 +65,7 @@ export const InfoSlider: React.FC<SliderProps> = ({
         ))}
 
         {showPagination && (
-          <div className="info-slider-pagination !relative flex mt-[-1rem] justify-center" />
+          <div className="info-slider-pagination !relative flex mt-[-0.5rem] justify-center" />
         )}
       </Swiper>
     </div>

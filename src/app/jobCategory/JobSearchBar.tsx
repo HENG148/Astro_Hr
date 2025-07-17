@@ -1,6 +1,7 @@
+'use client'
+
 import { Job } from "@/data/types/job"
-import { useCallback, useEffect, useState } from "react";
-import { useDebounce } from "@react-hook/debounce";
+import { useEffect, useState } from "react";
 
 type SearchBarProps = {
   jobs: Job[];
@@ -21,7 +22,6 @@ export default function SearchBar({
 }: SearchBarProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [isSearching, setIsSearching] = useState<boolean>(false);
-  // const debouncedSearchTerm = useDebounce(searchTerm, debounceTime);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -61,7 +61,7 @@ export default function SearchBar({
 
   return (
     <div className={`relative ${className}`}>
-      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+      <div className="absolute w-auto inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
         <svg 
           className={`h-5 w-5 ${isSearching ? 'text-blue-500 animate-pulse' : 'text-gray-400'}`} 
           fill="currentColor" 
@@ -77,7 +77,7 @@ export default function SearchBar({
 
       <input type="text"
         placeholder={placeholder}
-        className="block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-all duration-200"
+        className="block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm transition-all duration-200"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         aria-label='Search jobs'

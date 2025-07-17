@@ -1,5 +1,5 @@
 import React, { JSX } from 'react'
-import { Select, SelectGroup, SelectContent, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '../ui/select';
+import { Select, SelectGroup, SelectContent, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '../../components/ui/select';
 // import { Option } from '@/data/types/category';
 import { Industries, categories, time, locations } from '@/data/types/category';
 import { IoLocationSharp } from 'react-icons/io5'
@@ -16,7 +16,7 @@ const renderSelection = (
   icon?: JSX.Element
 ) => (
   <Select>
-    <SelectTrigger className="w-[17.25rem] text-[15px] py-4 border-[1px] border-[#adacac] ">
+    <SelectTrigger className="w-[17.1rem] text-[15px] py-4 border-[1px] border-[#adacac] ">
       <div className="flex items-center gap-3">
         {icon}
         <SelectValue placeholder={placeholder} />

@@ -18,7 +18,7 @@ export const jobCategories: Category[] = [
 
 export const popularKeywords: Category[] = [
   { name: "Information Technology Support", href: "/its" },
-  { name: "PHP", href: "/php" },
+  { name: "PHP", href: "/jobs" },
   { name: "Java", href: "/java" },
   { name: "Objective-C", href: "/object-c" },
   { name: "Video Editor", href: "/video" },

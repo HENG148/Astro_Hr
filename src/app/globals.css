@@ -52,6 +52,10 @@
   --font-default: "Nunito Sans", sans-serif;
   --font-accent: "Nunito", sans-serif;
   --font-khmer: "Dangrek", sans-serif;
+
+  --color-primary: #1a5276; /* Main color */
+  --color-accent: #149ac5;
+  --color-header: #CDE6FF;
 }
 
 :root {
@@ -129,5 +133,35 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  .qin {
+    background-color: rgba(0,0,0,.05);
+    border-radius: 10px;
+    height: 75px;
+    width: 75px;
+    margin: 0;
+    transform: rotate(30deg);
+  }
+  .qin {
+    position: relative;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+  }
+  .pla {
+    transform: rotate(-30deg);
+    position: relative;
+    left: 8px;
+  }
+
+  .custom-bg {
+    position: relative;
+    margin: 0 auto;
+    height: 23rem;
+    background-image: url("/state.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }

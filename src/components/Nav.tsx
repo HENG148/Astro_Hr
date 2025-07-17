@@ -30,7 +30,7 @@ const Nav: React.FC<NavProps> = ({
       label: 'job', 
       path: '/job',
       subLinks: [
-        { label: 'IT related', path: '/jobListing', query: { page: '1' } },
+        { label: 'IT related', path: '/jobs', query: { page: '1' } },
         { label: 'Other', path: '/' }
       ]
     },
@@ -44,7 +44,7 @@ const Nav: React.FC<NavProps> = ({
         { label: 'Seekers Review', path: '/' }
       ]
     },
-    { label: 'about', path: '/abouts' },
+    { label: 'about us', path: '/abouts' },
     { label: 'contact', path: '/contacts' }
   ]
 
@@ -86,7 +86,7 @@ const Nav: React.FC<NavProps> = ({
             {hasSubLinks ? (
               <>
                 <button 
-                  className={`flex items-center justify-between w-full capitalize ${isActive ? "text-[#149ac5]" : "text-gray-700 hover:text-[#149ac5]"} transition-all ${mobile ? 'py-2' : ''}`}
+                  className={`flex items-center justify-between w-full capitalize ${isActive ? "text-[#149ac5] font-semibold" : "text-gray-700 hover:text-[#149ac5]"} transition-all ${mobile ? 'py-2' : ''}`}
                   onClick={mobile ? () => setOpenDropDown(isDropdownOpen ? null : link.label) : undefined}
                   >
                   {link.label}
@@ -98,7 +98,7 @@ const Nav: React.FC<NavProps> = ({
 
                 {isDropdownOpen && (
                   <div
-                    className={`text-[16px] bg-white border border-gray-200 shadow-lg rounded-[7xl] p-2 z-10 ${mobile ? 'w-full border-none shadow-none' : 'absolute w-[12rem] left-[-1rem]'}`}
+                    className={`font-accent text-[16px] bg-white border border-gray-200 shadow-lg rounded-[7xl] p-2 z-10 ${mobile ? 'w-full border-none shadow-none' : 'absolute w-[12rem] left-[-1rem]'}`}
                     onMouseEnter={!mobile ? () => handleMouseEnter(link.label) : undefined}
                     onMouseLeave={!mobile ? handleMouseLeave : undefined}
                   >

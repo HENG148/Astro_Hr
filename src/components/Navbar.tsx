@@ -9,22 +9,9 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className="fixed w-full top-3 bg-white border-2 border-[#cde6ff] rounded-3xl backdrop-blur-sm z-50 py-3 px-4 sm:px-6 shadow-sm">
+    <header className="fixed w-full top-3 bg-white border-2 border-[#cde6ff] rounded-3xl backdrop-blur-sm z-50 py-2 shadow-sm">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-
-        {/* Mobile Menu */}
-        {/* <div className="xl:hidden flex items-center">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none"
-            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          >
-            {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
-          </button>
-        </div> */}
-
         <div className="flex items-center gap-4 md:gap-8">
-          {/* Logo */}
           <Link href="/" className="flex-shrink-0 hover:opacity-90 transition-opacity">
             <Image
               src={logo}

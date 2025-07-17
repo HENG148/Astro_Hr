@@ -7,16 +7,10 @@ import { Job } from '@/data/types/job';
 import JobSelection from './JobSelection';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import image from "../../../public/workplace_default.jpg"
 import { allJobs } from '@/data/types/job';
-import Image from 'next/image';
-import { FaRegCalendarAlt } from 'react-icons/fa';
-import { MdOutlineQrCode2, MdShoppingBag } from 'react-icons/md';
-// import CountdownDate from '../CountdownDate';
-import { IoLocationSharp, IoPeople } from 'react-icons/io5';
-import Link from 'next/link';
+import JobCard from './JobCards';
 
-export default function PageJob() {
+export default function JobCategory() {
   const [displayedJobs, setDisplayedJobs] = useState<Job[]>(allJobs);
   const [filteredByTypeAndLevel, setFilteredByTypeAndLevel] = useState<Job[]>(allJobs);
   
@@ -33,8 +27,8 @@ export default function PageJob() {
 
   return (
     <>
-      <main className='font-accent'>
-        <div className='container font-accent mx-auto w-[75rem] py-4 h-auto border rounded-md shadow-sm space-y-4'>
+      <main className='container mx-auto 2xl:px-[10.5rem]'>
+        <div className='px-4 py-4 h-auto border rounded-md shadow-sm space-y-4'>
           <JobButton
             jobs={allJobs}
             onFilterChange={(filteredJobs) => {
@@ -42,21 +36,56 @@ export default function PageJob() {
               setDisplayedJobs(filteredJobs)
             }}
           />
-          
           <SearchBar
             jobs={allJobs}
             onSearch={applyAllFilters}
-            className='max-w-[73.5rem] mx-auto'
+            className='max-w-[74.8rem] mx-auto'
           />
 
           <div className='flex justify-center'> 
             <JobSelection />
           </div>
         </div>
-        
-        <div className="mt-8 mx-[2.5rem]">
-          <p className='text-2xl font-semibold mb-6'>Job</p>
-          <Swiper
+
+          <div className='mt-5'>
+            <p className='text-2xl font-semibold mb-6'>Job</p>
+            {displayedJobs.length > 0 ? (
+              <Swiper 
+                spaceBetween={20}
+                slidesPerView={4}
+                breakpoints={{
+                  0: { slidesPerView: 1 },
+                  640: { slidesPerView: 2 },
+                  768: { slidesPerView: 3 },
+                  1024: { slidesPerView: 4 },
+                }}
+                navigation={{
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                }}
+                scrollbar={{ draggable: true }}
+                loop={false}
+                modules={[Pagination, Navigation]}
+                className="mySwiper w-full"
+              >
+                {displayedJobs.map((job, idx) => (
+                  <SwiperSlide key={idx}>
+                    <JobCard key={job.id} job={job} />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            ) : (
+                <div className='h-[20rem] grid place-items-center w-full border border-gray-200 rounded-xl'>
+                  <div className='text-center'>
+                    <p className='text-gray-500 text-lg mb-2'>No Jobs found</p>
+                    <p className='text-gray-400 text-sm'>
+                      Try adjusting your search or filters
+                    </p>
+                  </div>
+                </div>
+            )}
+          </div>
+          {/* <Swiper
             spaceBetween={20}
             slidesPerView={4}
             breakpoints={{
@@ -83,8 +112,14 @@ export default function PageJob() {
               {displayedJobs.length > 0 ? (
                 displayedJobs.map(job => (
                   <SwiperSlide>
-                    <div key={job.id} className="py-4 h-[21rem] grid justify-center border rounded-3xl shadow-md"> {/* h-21rem */}
-                      <Image src={image} alt='' className='w-[15.5rem] h-36 rounded-2xl object-cover'/>
+                    <div 
+                      key={job.id} 
+                      className="py-4 h-[21rem] grid justify-center border rounded-3xl shadow-md"
+                    >
+                      <Image 
+                        src={image} alt='' 
+                        className='w-[15.5rem] h-36 rounded-2xl object-cover'
+                      />
                       <div className='relative top-[-47px]'>
                         {job.skills && (
                           <div className="mt-3 flex gap-2 object-cover ml-2 mb-3">
@@ -145,8 +180,8 @@ export default function PageJob() {
                   </div>
               )}
             </div>
-          </Swiper>
-        </div>
+          </Swiper> */}
+        {/* </div> */}
       </main>
     </>
   )
