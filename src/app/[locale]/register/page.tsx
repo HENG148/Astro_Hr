@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react'
 import image from '../../../public/find_job_primary.1e1bc76.png'
-import logo from '../../../public/8.png'
+import CompanyLogo from '../../../public/8.png'
 import { FaGoogle, FaLinkedin } from 'react-icons/fa';
 import Link from 'next/link';
 
@@ -59,7 +59,7 @@ export default function Register({onSuccess}: RegisterFormProps) {
           {/* Left Side - Welcome Section */}
           <div className='lg:w-1/2 bg-[#F0F6FF] p-8 sm:p-12 flex flex-col'>
             <div>
-              <Image src={logo} alt='Logo' width={64} height={64} />
+              <Image src={CompanyLogo} alt='Logo' width={64} height={64} />
               <h1 className='text-2xl sm:text-3xl font-bold mt-6'>Welcome to</h1>
               <h2 className='text-xl sm:text-2xl font-bold mt-2'>Jobify <span className='text-primary'>Job Seeker</span></h2>
               <p className='text-gray-600 mt-4'>Find your dream job now.</p>
