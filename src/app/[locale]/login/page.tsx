@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import React, { useState } from 'react'
-import image from '../../../public/find_job_primary.1e1bc76.png'
-import MainLogo from '../../../public/8.png'
+import image from '../../../../public/find_job_primary.1e1bc76.png'
+import MainLogo from '../../../../public/8.png'
 import { FaGoogle, FaLinkedin } from 'react-icons/fa';
 import Link from 'next/link';
 
