@@ -1,5 +1,5 @@
 import React, { JSX } from 'react'
-import { Select, SelectGroup, SelectContent, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '../../components/ui/select';
+import { Select, SelectGroup, SelectContent, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '../../../components/ui/select';
 // import { Option } from '@/data/types/category';
 import { Industries, categories, time, locations } from '@/data/types/category';
 import { IoLocationSharp } from 'react-icons/io5'

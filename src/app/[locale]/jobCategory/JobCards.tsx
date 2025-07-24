@@ -1,6 +1,6 @@
 import { Job } from "@/data/types/job";
 import Image from "next/image";
-import image from "../../../public/workplace_default.jpg";
+import image from '../../../../public/workplace_default.jpg'
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { MdOutlineQrCode, MdShoppingBag } from "react-icons/md";
 import { IoLocationSharp, IoPeople } from "react-icons/io5";

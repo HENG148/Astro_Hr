@@ -31,7 +31,7 @@ const Breadcrumbs: React.FC = () => {
   const breadcrumbConfig: BreadcrumbConfig = useMemo(() => ({
     'job': { hide: true },
     'jobs': { 
-      category: 'IT Related', // Add parent category here
+      category: 'IT Related',
       alwaysShowCategory: true,
     },
     'media': {
@@ -59,17 +59,12 @@ const Breadcrumbs: React.FC = () => {
       let displayName = decodedSegment;
       let isLast = i === paths.length - 1;
 
-      // if (config.category && config.alwaysShowCategory) {
-      //   displayName = `${decodedSegment} (${config.category})`;
-      // }
-
       if (config.category && config.alwaysShowCategory) {
         displayName = `${capitalizeFirstLetter(segment)} (${config.category})`;
       } else if (config.customTitle) {
         displayName = config.customTitle;
       }
 
-      //Override with dynamic title (ex: form url query)
       if (config.dynamicTitle && searchParams?.get('title')) {
         displayName = searchParams?.get('title')!
       }
@@ -92,20 +87,7 @@ const Breadcrumbs: React.FC = () => {
           isLast: true,
         });
         break;
-      }
-
-      // if (segment === 'jobs' && i < paths.length - 1) {
-      //   const jobId = paths[i + 1];
-      //   if (jobId) {
-      //     const jobTitle = searchParams?.get('title') || "Job Details";
-      //     result.push({
-      //       path: `${currentPath}/${jobId}`,
-      //       name: jobTitle,
-      //       isLast: true,
-      //     });
-      //     break;
-      //   }
-      // }
+      }                                       
     }
     return result;
   }, [pathname, searchParams, breadcrumbConfig]);

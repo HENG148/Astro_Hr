@@ -202,7 +202,6 @@ export const allJobs: Job[] = [
     title: 'System Reliability Associate', 
     jobCode: 'JB-0998',
     salary: '$1200 ~ $1500',
-    // posted: '9 days ago',
     type: 'Full Time', 
     level: "Junior Level", 
     location: 'Phnom Penh', 

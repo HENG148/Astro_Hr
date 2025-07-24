@@ -62,6 +62,13 @@ const Nav: React.FC<NavProps> = ({
     }, 200);
   }
 
+  const isLinkActive = (linkPath: string) => {
+    const normalizedPathname = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/');
+    const normalizedLinkPath = linkPath.replace(/^\/[a-z]{2}(\/|$)/, '/');
+
+    return normalizedPathname === normalizedLinkPath || (linkPath !== "/" && normalizedPathname.startsWith(normalizedLinkPath))
+  };
+
   React.useEffect(() => {
     return () => {
       if (closeTimeout.current) {
@@ -75,7 +82,7 @@ const Nav: React.FC<NavProps> = ({
       {links.map((link) => {
         const hasSubLinks = link.subLinks && link.subLinks.length > 0;
         const isDropdownOpen = openDropdown === link.label;
-        const isActive = pathname === link.path || (link.path !== '/' && pathname.startsWith(link.path));
+        const isActive = isLinkActive(link.path);
 
         return (
           <div
@@ -109,7 +116,9 @@ const Nav: React.FC<NavProps> = ({
                           pathname: subLink.path,
                           query: subLink.query || {}
                         }}
-                        className='block px-4 py-2 hover:bg-gray-100 transition-colors'
+                        className={`block px-4 py-2 hover:bg-gray-100 transition-colors ${
+                          isLinkActive(subLink.path) ? 'font-medium text-accent' : 'text-black'
+                        }`}
                       >
                         {subLink.label}
                       </Link>

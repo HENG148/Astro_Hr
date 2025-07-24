@@ -7,7 +7,7 @@ import FindJob from "@/components/findJobs/page";
 import { jobCategories, popularKeywords } from "@/data/types/category";
 import { AchievementJob } from "@/components/AchivementJob";
 import Media from "./media/page";
-import JobCategory from "@/app/jobCategory/page";
+import JobCategory from "./jobCategory/page";
 
 interface LinkButtonProps {
   href: string;
@@ -30,7 +30,7 @@ interface SectionHeaderProps {
 const LinkButton: React.FC<LinkButtonProps> = ({ href, text, className }) => {
   return (
     <Link href={href}
-      className={`${className} text-[#149ac5] font-medium text-[17px] border border-[#149ac5] px-10 py-3 rounded-[10px] hover:bg-[#edf7f6]`}>
+      className={`${className} text-[#149ac5] font-medium text-[17px] border border-[#149ac5] px-10 py-[10px] rounded-[10px] hover:bg-[#edf7f6]`}>
       {text}
     </Link>
   )

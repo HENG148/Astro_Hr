@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 export function LayoutProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const noHeaderFooterRoutes = [
-    '/log',
+    '/login',
     '/register',
     '/coverLetter'
   ];

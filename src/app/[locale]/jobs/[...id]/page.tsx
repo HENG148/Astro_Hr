@@ -33,7 +33,7 @@ export default async function JobDetailPage({ params }: PageProps) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
+    <div className="container mx-auto px-4 mt-40 py-8 max-w-4xl">
       <header className="mb-8 border-b pb-6">
         <h1 className="text-3xl font-bold mb-2">
           {job.title} <span className="text-gray-500">({job.jobCode})</span>
